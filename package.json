@@ -1,0 +1,17 @@
+{
+  "name": "angular-project-script",
+  "version": "1.0.0",
+  "description": "Angular Project Script is a tool that streamlines the creation of Angular projects. It leverages Bootstrap for styling and includes a simple CLI powered by readline-sync. Use this script to scaffold new Angular projects effortlessly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ngx-create-project": "node create-angular-project.js"
+  },
+  "keywords": [],
+  "author": "Morish Wilson Bhingardive",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "readline-sync": "^1.4.10"
+  }
+}

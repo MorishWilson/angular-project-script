@@ -1674,172 +1674,569 @@ const projectData = {
 	
         </html>`,
         styles_scss: `// Custom Theming for Angular Material
-    // For more information: https://material.angular.io/guide/theming
-    @use '@angular/material' as mat;
-    // Plus imports for other components in your app.
-    
-    // Include the common styles for Angular Material. We include this here so that you only
-    // have to load a single css file for Angular Material in your app.
-    // Be sure that you only ever include this mixin once!
-    @include mat.core();
-    
-    .light-theme {
-        // Define the palettes for your theme using the Material Design palettes available in palette.scss
-        // (imported above). For each palette, you can optionally specify a default, lighter, and darker
-        // hue. Available color palettes: https://material.io/design/color/
-        $${projectName}-primary: mat.define-palette(mat.$gray-palette, 900);
-        $${projectName}-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-    
-        // The warn palette is optional (defaults to red).
-        $${projectName}-warn: mat.define-palette(mat.$red-palette);
-    
-        // Create the theme object. A theme consists of configurations for individual
-        // theming systems such as "color" or "typography".
-        $${projectName}-theme: mat.define-light-theme((color: (primary: $${projectName}-primary,
-                        accent: $${projectName}-accent,
-                        warn: $${projectName}-warn,
-                    )));
-    
-        // Include theme styles for core and each component used in your app.
-        // Alternatively, you can import and @include the theme mixins for each component
-        // that you are using.
-        @include mat.all-component-themes($${projectName}-theme);
-        $color0-primary: mat.get-color-from-palette($${projectName}-primary, 50);
-        $color1-primary: mat.get-color-from-palette($${projectName}-primary, 100);
-        $color2-primary: mat.get-color-from-palette($${projectName}-primary, 200);
-        $color3-primary: mat.get-color-from-palette($${projectName}-primary, 300);
-        $color4-primary: mat.get-color-from-palette($${projectName}-primary, 400);
-        $color5-primary: mat.get-color-from-palette($${projectName}-primary, 500);
-        $color6-primary: mat.get-color-from-palette($${projectName}-primary, 600);
-        $color7-primary: mat.get-color-from-palette($${projectName}-primary, 700);
-        $color8-primary: mat.get-color-from-palette($${projectName}-primary, 800);
-        $color9-primary: mat.get-color-from-palette($${projectName}-primary, 900);
-    
-        $color0-accent: mat.get-color-from-palette($${projectName}-accent, 50);
-        $color1-accent: mat.get-color-from-palette($${projectName}-accent, 100);
-        $color2-accent: mat.get-color-from-palette($${projectName}-accent, 200);
-        $color3-accent: mat.get-color-from-palette($${projectName}-accent, 300);
-        $color4-accent: mat.get-color-from-palette($${projectName}-accent, 400);
-        $color5-accent: mat.get-color-from-palette($${projectName}-accent, 500);
-        $color6-accent: mat.get-color-from-palette($${projectName}-accent, 600);
-        $color7-accent: mat.get-color-from-palette($${projectName}-accent, 700);
-        $color8-accent: mat.get-color-from-palette($${projectName}-accent, 800);
-        $color9-accent: mat.get-color-from-palette($${projectName}-accent, 900);
-    
-        $color0-warn: mat.get-color-from-palette($${projectName}-warn, 50);
-        $color1-warn: mat.get-color-from-palette($${projectName}-warn, 100);
-        $color2-warn: mat.get-color-from-palette($${projectName}-warn, 200);
-        $color3-warn: mat.get-color-from-palette($${projectName}-warn, 300);
-        $color4-warn: mat.get-color-from-palette($${projectName}-warn, 400);
-        $color5-warn: mat.get-color-from-palette($${projectName}-warn, 500);
-        $color6-warn: mat.get-color-from-palette($${projectName}-warn, 600);
-        $color7-warn: mat.get-color-from-palette($${projectName}-warn, 700);
-        $color8-warn: mat.get-color-from-palette($${projectName}-warn, 800);
-        $color9-warn: mat.get-color-from-palette($${projectName}-warn, 900);
-    
-        @import "./assets/styles/custom-theme";
-    }
-    
-    .dark-theme {
-        // Define the palettes for your theme using the Material Design palettes available in palette.scss
-        // (imported above). For each palette, you can optionally specify a default, lighter, and darker
-        // hue. Available color palettes: https://material.io/design/color/
-        $${projectName}-primary: mat.define-palette(mat.$gray-palette, 900);
-        $${projectName}-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-    
-        // The warn palette is optional (defaults to red).
-        $${projectName}-warn: mat.define-palette(mat.$red-palette);
-    
-        // Create the theme object. A theme consists of configurations for individual
-        // theming systems such as "color" or "typography".
-        $${projectName}-theme: mat.define-dark-theme((color: (primary: $${projectName}-primary,
-                        accent: $${projectName}-accent,
-                        warn: $${projectName}-warn,
-                    )));
-    
-        // Include theme styles for core and each component used in your app.
-        // Alternatively, you can import and @include the theme mixins for each component
-        // that you are using.
-        @include mat.all-component-themes($${projectName}-theme);
-        $color0-primary: mat.get-color-from-palette($${projectName}-primary, 900);
-        $color1-primary: mat.get-color-from-palette($${projectName}-primary, 800);
-        $color2-primary: mat.get-color-from-palette($${projectName}-primary, 700);
-        $color3-primary: mat.get-color-from-palette($${projectName}-primary, 600);
-        $color4-primary: mat.get-color-from-palette($${projectName}-primary, 500);
-        $color5-primary: mat.get-color-from-palette($${projectName}-primary, 400);
-        $color6-primary: mat.get-color-from-palette($${projectName}-primary, 300);
-        $color7-primary: mat.get-color-from-palette($${projectName}-primary, 200);
-        $color8-primary: mat.get-color-from-palette($${projectName}-primary, 100);
-        $color9-primary: mat.get-color-from-palette($${projectName}-primary, 50);
-    
-        $color0-accent: mat.get-color-from-palette($${projectName}-accent, 900);
-        $color1-accent: mat.get-color-from-palette($${projectName}-accent, 800);
-        $color2-accent: mat.get-color-from-palette($${projectName}-accent, 700);
-        $color3-accent: mat.get-color-from-palette($${projectName}-accent, 600);
-        $color4-accent: mat.get-color-from-palette($${projectName}-accent, 500);
-        $color5-accent: mat.get-color-from-palette($${projectName}-accent, 400);
-        $color6-accent: mat.get-color-from-palette($${projectName}-accent, 300);
-        $color7-accent: mat.get-color-from-palette($${projectName}-accent, 200);
-        $color8-accent: mat.get-color-from-palette($${projectName}-accent, 100);
-        $color9-accent: mat.get-color-from-palette($${projectName}-accent, 50);
-    
-        $color0-warn: mat.get-color-from-palette($${projectName}-warn, 900);
-        $color1-warn: mat.get-color-from-palette($${projectName}-warn, 800);
-        $color2-warn: mat.get-color-from-palette($${projectName}-warn, 700);
-        $color3-warn: mat.get-color-from-palette($${projectName}-warn, 600);
-        $color4-warn: mat.get-color-from-palette($${projectName}-warn, 500);
-        $color5-warn: mat.get-color-from-palette($${projectName}-warn, 400);
-        $color6-warn: mat.get-color-from-palette($${projectName}-warn, 300);
-        $color7-warn: mat.get-color-from-palette($${projectName}-warn, 200);
-        $color8-warn: mat.get-color-from-palette($${projectName}-warn, 100);
-        $color9-warn: mat.get-color-from-palette($${projectName}-warn, 50);
-    
-        @import "./assets/styles/custom-theme";
-    }
-    
-    /* You can add global styles to this file, and also import other style files */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    @import "./assets/styles/theme.scss";
-    
-    html,
-    body {
-        height: 100%;
-    }
-    
-    body {
-        margin: 0;
-        font-family: 'Noto Sans', sans-serif !important;
-    }
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        margin: 0 !important;
-    }
-    
-    .matTooltipClass {
-        font-size: small;
-    }
-    
-    .mdc-list-item {
-        justify-content: center !important;
-    }
-    
-    // 	SNACKBAR
-    .mdc-snackbar__surface {
-        padding: 0 !important;
-        border-radius: 0.3rem !important;
-        background-color: #FDFCFF !important;
-    }
-    
-    .mat-icon-button {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
+        // For more information: https://material.angular.io/guide/theming
+        @use '@angular/material' as mat;
+        // Plus imports for other components in your app.
+        
+        // Include the common styles for Angular Material. We include this here so that you only
+        // have to load a single css file for Angular Material in your app.
+        // Be sure that you only ever include this mixin once!
+        @include mat.core();
+        
+        .light-theme {
+            // Define the palettes for your theme using the Material Design palettes available in palette.scss
+            // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+            // hue. Available color palettes: https://material.io/design/color/
+            ${projectName}-primary: mat.define-palette(mat.$gray-palette);
+            ${projectName}-accent: mat.define-palette(mat.$orange-palette);
+        
+            // The warn palette is optional (defaults to red).
+            ${projectName}-warn: mat.define-palette(mat.$red-palette);
+        
+            // Extra color palettes
+            ${projectName}-pink: mat.define-palette(mat.$pink-palette);
+            ${projectName}-purple: mat.define-palette(mat.$purple-palette);
+            ${projectName}-deep-purple: mat.define-palette(mat.$deep-purple-palette);
+            ${projectName}-indigo: mat.define-palette(mat.$indigo-palette);
+            ${projectName}-blue: mat.define-palette(mat.$blue-palette);
+            ${projectName}-light-blue: mat.define-palette(mat.$light-blue-palette);
+            ${projectName}-cyan: mat.define-palette(mat.$cyan-palette);
+            ${projectName}-teal: mat.define-palette(mat.$teal-palette);
+            ${projectName}-green: mat.define-palette(mat.$green-palette);
+            ${projectName}-light-green: mat.define-palette(mat.$light-green-palette);
+            ${projectName}-lime: mat.define-palette(mat.$lime-palette);
+            ${projectName}-yellow: mat.define-palette(mat.$yellow-palette);
+            ${projectName}-amber: mat.define-palette(mat.$amber-palette);
+            ${projectName}-deep-orange: mat.define-palette(mat.$deep-orange-palette);
+            ${projectName}-brown: mat.define-palette(mat.$brown-palette);
+            ${projectName}-blue-gray: mat.define-palette(mat.$blue-gray-palette);
+        
+            // Create the theme object. A theme consists of configurations for individual
+            // theming systems such as "color" or "typography".
+            ${projectName}-theme: mat.define-light-theme((color: (primary: ${projectName}-primary,
+                            accent: ${projectName}-accent,
+                            warn: ${projectName}-warn,
+        
+                            // Extra color palettes
+                            pink: ${projectName}-pink,
+                            purple: ${projectName}-purple,
+                            deep-purple: ${projectName}-deep-purple,
+                            blue: ${projectName}-blue,
+                            light-blue: ${projectName}-light-blue,
+                            indigo: ${projectName}-indigo,
+                            cyan: ${projectName}-cyan,
+                            teal: ${projectName}-teal,
+                            green: ${projectName}-green,
+                            light-green: ${projectName}-light-green,
+                            lime: ${projectName}-lime,
+                            yellow: ${projectName}-yellow,
+                            amber: ${projectName}-amber,
+                            deep-orange: ${projectName}-deep-orange,
+                            brown: ${projectName}-brown,
+                            blue-gray: ${projectName}-blue-gray,
+                        )));
+        
+            // Include theme styles for core and each component used in your app.
+            // Alternatively, you can import and @include the theme mixins for each component
+            // that you are using.
+            @include mat.all-component-themes(${projectName}-theme);
+        
+            $color0-primary: mat.get-color-from-palette(${projectName}-primary, 900);
+            $color1-primary: mat.get-color-from-palette(${projectName}-primary, 800);
+            $color2-primary: mat.get-color-from-palette(${projectName}-primary, 700);
+            $color3-primary: mat.get-color-from-palette(${projectName}-primary, 600);
+            $color4-primary: mat.get-color-from-palette(${projectName}-primary, 500);
+            $color5-primary: mat.get-color-from-palette(${projectName}-primary, 400);
+            $color6-primary: mat.get-color-from-palette(${projectName}-primary, 300);
+            $color7-primary: mat.get-color-from-palette(${projectName}-primary, 200);
+            $color8-primary: mat.get-color-from-palette(${projectName}-primary, 100);
+            $color9-primary: mat.get-color-from-palette(${projectName}-primary, 50);
+        
+            $color0-accent: mat.get-color-from-palette(${projectName}-accent, 900);
+            $color1-accent: mat.get-color-from-palette(${projectName}-accent, 800);
+            $color2-accent: mat.get-color-from-palette(${projectName}-accent, 700);
+            $color3-accent: mat.get-color-from-palette(${projectName}-accent, 600);
+            $color4-accent: mat.get-color-from-palette(${projectName}-accent, 500);
+            $color5-accent: mat.get-color-from-palette(${projectName}-accent, 400);
+            $color6-accent: mat.get-color-from-palette(${projectName}-accent, 300);
+            $color7-accent: mat.get-color-from-palette(${projectName}-accent, 200);
+            $color8-accent: mat.get-color-from-palette(${projectName}-accent, 100);
+            $color9-accent: mat.get-color-from-palette(${projectName}-accent, 50);
+        
+            $color0-warn: mat.get-color-from-palette(${projectName}-warn, 900);
+            $color1-warn: mat.get-color-from-palette(${projectName}-warn, 800);
+            $color2-warn: mat.get-color-from-palette(${projectName}-warn, 700);
+            $color3-warn: mat.get-color-from-palette(${projectName}-warn, 600);
+            $color4-warn: mat.get-color-from-palette(${projectName}-warn, 500);
+            $color5-warn: mat.get-color-from-palette(${projectName}-warn, 400);
+            $color6-warn: mat.get-color-from-palette(${projectName}-warn, 300);
+            $color7-warn: mat.get-color-from-palette(${projectName}-warn, 200);
+            $color8-warn: mat.get-color-from-palette(${projectName}-warn, 100);
+            $color9-warn: mat.get-color-from-palette(${projectName}-warn, 50);
+        
+            // Start
+            $color0-pink: mat.get-color-from-palette(${projectName}-pink, 900);
+            $color1-pink: mat.get-color-from-palette(${projectName}-pink, 800);
+            $color2-pink: mat.get-color-from-palette(${projectName}-pink, 700);
+            $color3-pink: mat.get-color-from-palette(${projectName}-pink, 600);
+            $color4-pink: mat.get-color-from-palette(${projectName}-pink, 500);
+            $color5-pink: mat.get-color-from-palette(${projectName}-pink, 400);
+            $color6-pink: mat.get-color-from-palette(${projectName}-pink, 300);
+            $color7-pink: mat.get-color-from-palette(${projectName}-pink, 200);
+            $color8-pink: mat.get-color-from-palette(${projectName}-pink, 100);
+            $color9-pink: mat.get-color-from-palette(${projectName}-pink, 50);
+        
+            $color0-purple: mat.get-color-from-palette(${projectName}-purple, 900);
+            $color1-purple: mat.get-color-from-palette(${projectName}-purple, 800);
+            $color2-purple: mat.get-color-from-palette(${projectName}-purple, 700);
+            $color3-purple: mat.get-color-from-palette(${projectName}-purple, 600);
+            $color4-purple: mat.get-color-from-palette(${projectName}-purple, 500);
+            $color5-purple: mat.get-color-from-palette(${projectName}-purple, 400);
+            $color6-purple: mat.get-color-from-palette(${projectName}-purple, 300);
+            $color7-purple: mat.get-color-from-palette(${projectName}-purple, 200);
+            $color8-purple: mat.get-color-from-palette(${projectName}-purple, 100);
+            $color9-purple: mat.get-color-from-palette(${projectName}-purple, 50);
+        
+            $color0-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 900);
+            $color1-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 800);
+            $color2-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 700);
+            $color3-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 600);
+            $color4-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 500);
+            $color5-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 400);
+            $color6-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 300);
+            $color7-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 200);
+            $color8-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 100);
+            $color9-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 50);
+        
+            $color0-blue: mat.get-color-from-palette(${projectName}-blue, 900);
+            $color1-blue: mat.get-color-from-palette(${projectName}-blue, 800);
+            $color2-blue: mat.get-color-from-palette(${projectName}-blue, 700);
+            $color3-blue: mat.get-color-from-palette(${projectName}-blue, 600);
+            $color4-blue: mat.get-color-from-palette(${projectName}-blue, 500);
+            $color5-blue: mat.get-color-from-palette(${projectName}-blue, 400);
+            $color6-blue: mat.get-color-from-palette(${projectName}-blue, 300);
+            $color7-blue: mat.get-color-from-palette(${projectName}-blue, 200);
+            $color8-blue: mat.get-color-from-palette(${projectName}-blue, 100);
+            $color9-blue: mat.get-color-from-palette(${projectName}-blue, 50);
+        
+            $color0-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 900);
+            $color1-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 800);
+            $color2-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 700);
+            $color3-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 600);
+            $color4-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 500);
+            $color5-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 400);
+            $color6-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 300);
+            $color7-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 200);
+            $color8-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 100);
+            $color9-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 50);
+        
+            $color0-indigo: mat.get-color-from-palette(${projectName}-indigo, 900);
+            $color1-indigo: mat.get-color-from-palette(${projectName}-indigo, 800);
+            $color2-indigo: mat.get-color-from-palette(${projectName}-indigo, 700);
+            $color3-indigo: mat.get-color-from-palette(${projectName}-indigo, 600);
+            $color4-indigo: mat.get-color-from-palette(${projectName}-indigo, 500);
+            $color5-indigo: mat.get-color-from-palette(${projectName}-indigo, 400);
+            $color6-indigo: mat.get-color-from-palette(${projectName}-indigo, 300);
+            $color7-indigo: mat.get-color-from-palette(${projectName}-indigo, 200);
+            $color8-indigo: mat.get-color-from-palette(${projectName}-indigo, 100);
+            $color9-indigo: mat.get-color-from-palette(${projectName}-indigo, 50);
+        
+            $color0-cyan: mat.get-color-from-palette(${projectName}-cyan, 900);
+            $color1-cyan: mat.get-color-from-palette(${projectName}-cyan, 800);
+            $color2-cyan: mat.get-color-from-palette(${projectName}-cyan, 700);
+            $color3-cyan: mat.get-color-from-palette(${projectName}-cyan, 600);
+            $color4-cyan: mat.get-color-from-palette(${projectName}-cyan, 500);
+            $color5-cyan: mat.get-color-from-palette(${projectName}-cyan, 400);
+            $color6-cyan: mat.get-color-from-palette(${projectName}-cyan, 300);
+            $color7-cyan: mat.get-color-from-palette(${projectName}-cyan, 200);
+            $color8-cyan: mat.get-color-from-palette(${projectName}-cyan, 100);
+            $color9-cyan: mat.get-color-from-palette(${projectName}-cyan, 50);
+        
+            $color0-teal: mat.get-color-from-palette(${projectName}-teal, 900);
+            $color1-teal: mat.get-color-from-palette(${projectName}-teal, 800);
+            $color2-teal: mat.get-color-from-palette(${projectName}-teal, 700);
+            $color3-teal: mat.get-color-from-palette(${projectName}-teal, 600);
+            $color4-teal: mat.get-color-from-palette(${projectName}-teal, 500);
+            $color5-teal: mat.get-color-from-palette(${projectName}-teal, 400);
+            $color6-teal: mat.get-color-from-palette(${projectName}-teal, 300);
+            $color7-teal: mat.get-color-from-palette(${projectName}-teal, 200);
+            $color8-teal: mat.get-color-from-palette(${projectName}-teal, 100);
+            $color9-teal: mat.get-color-from-palette(${projectName}-teal, 50);
+        
+            $color0-green: mat.get-color-from-palette(${projectName}-green, 900);
+            $color1-green: mat.get-color-from-palette(${projectName}-green, 800);
+            $color2-green: mat.get-color-from-palette(${projectName}-green, 700);
+            $color3-green: mat.get-color-from-palette(${projectName}-green, 600);
+            $color4-green: mat.get-color-from-palette(${projectName}-green, 500);
+            $color5-green: mat.get-color-from-palette(${projectName}-green, 400);
+            $color6-green: mat.get-color-from-palette(${projectName}-green, 300);
+            $color7-green: mat.get-color-from-palette(${projectName}-green, 200);
+            $color8-green: mat.get-color-from-palette(${projectName}-green, 100);
+            $color9-green: mat.get-color-from-palette(${projectName}-warn, 50);
+        
+            $color0-light-green: mat.get-color-from-palette(${projectName}-light-green, 900);
+            $color1-light-green: mat.get-color-from-palette(${projectName}-light-green, 800);
+            $color2-light-green: mat.get-color-from-palette(${projectName}-light-green, 700);
+            $color3-light-green: mat.get-color-from-palette(${projectName}-light-green, 600);
+            $color4-light-green: mat.get-color-from-palette(${projectName}-light-green, 500);
+            $color5-light-green: mat.get-color-from-palette(${projectName}-light-green, 400);
+            $color6-light-green: mat.get-color-from-palette(${projectName}-light-green, 300);
+            $color7-light-green: mat.get-color-from-palette(${projectName}-light-green, 200);
+            $color8-light-green: mat.get-color-from-palette(${projectName}-light-green, 100);
+            $color9-light-green: mat.get-color-from-palette(${projectName}-light-green, 50);
+        
+            $color0-lime: mat.get-color-from-palette(${projectName}-lime, 900);
+            $color1-lime: mat.get-color-from-palette(${projectName}-lime, 800);
+            $color2-lime: mat.get-color-from-palette(${projectName}-lime, 700);
+            $color3-lime: mat.get-color-from-palette(${projectName}-lime, 600);
+            $color4-lime: mat.get-color-from-palette(${projectName}-lime, 500);
+            $color5-lime: mat.get-color-from-palette(${projectName}-lime, 400);
+            $color6-lime: mat.get-color-from-palette(${projectName}-lime, 300);
+            $color7-lime: mat.get-color-from-palette(${projectName}-lime, 200);
+            $color8-lime: mat.get-color-from-palette(${projectName}-lime, 100);
+            $color9-lime: mat.get-color-from-palette(${projectName}-lime, 50);
+        
+            $color0-yellow: mat.get-color-from-palette(${projectName}-yellow, 900);
+            $color1-yellow: mat.get-color-from-palette(${projectName}-yellow, 800);
+            $color2-yellow: mat.get-color-from-palette(${projectName}-yellow, 700);
+            $color3-yellow: mat.get-color-from-palette(${projectName}-yellow, 600);
+            $color4-yellow: mat.get-color-from-palette(${projectName}-yellow, 500);
+            $color5-yellow: mat.get-color-from-palette(${projectName}-yellow, 400);
+            $color6-yellow: mat.get-color-from-palette(${projectName}-yellow, 300);
+            $color7-yellow: mat.get-color-from-palette(${projectName}-yellow, 200);
+            $color8-yellow: mat.get-color-from-palette(${projectName}-yellow, 100);
+            $color9-yellow: mat.get-color-from-palette(${projectName}-yellow, 50);
+        
+            $color0-amber: mat.get-color-from-palette(${projectName}-amber, 900);
+            $color1-amber: mat.get-color-from-palette(${projectName}-amber, 800);
+            $color2-amber: mat.get-color-from-palette(${projectName}-amber, 700);
+            $color3-amber: mat.get-color-from-palette(${projectName}-amber, 600);
+            $color4-amber: mat.get-color-from-palette(${projectName}-amber, 500);
+            $color5-amber: mat.get-color-from-palette(${projectName}-amber, 400);
+            $color6-amber: mat.get-color-from-palette(${projectName}-amber, 300);
+            $color7-amber: mat.get-color-from-palette(${projectName}-amber, 200);
+            $color8-amber: mat.get-color-from-palette(${projectName}-amber, 100);
+            $color9-amber: mat.get-color-from-palette(${projectName}-amber, 50);
+        
+            $color0-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 900);
+            $color1-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 800);
+            $color2-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 700);
+            $color3-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 600);
+            $color4-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 500);
+            $color5-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 400);
+            $color6-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 300);
+            $color7-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 200);
+            $color8-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 100);
+            $color9-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 50);
+        
+            $color0-brown: mat.get-color-from-palette(${projectName}-brown, 900);
+            $color1-brown: mat.get-color-from-palette(${projectName}-brown, 800);
+            $color2-brown: mat.get-color-from-palette(${projectName}-brown, 700);
+            $color3-brown: mat.get-color-from-palette(${projectName}-brown, 600);
+            $color4-brown: mat.get-color-from-palette(${projectName}-brown, 500);
+            $color5-brown: mat.get-color-from-palette(${projectName}-brown, 400);
+            $color6-brown: mat.get-color-from-palette(${projectName}-brown, 300);
+            $color7-brown: mat.get-color-from-palette(${projectName}-brown, 200);
+            $color8-brown: mat.get-color-from-palette(${projectName}-brown, 100);
+            $color9-brown: mat.get-color-from-palette(${projectName}-brown, 50);
+        
+            $color0-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 900);
+            $color1-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 800);
+            $color2-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 700);
+            $color3-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 600);
+            $color4-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 500);
+            $color5-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 400);
+            $color6-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 300);
+            $color7-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 200);
+            $color8-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 100);
+            $color9-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 50);
+        
+            @import "./assets/styles/custom-theme";
+        }
+        
+        .dark-theme {
+            // Define the palettes for your theme using the Material Design palettes available in palette.scss
+            // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+            // hue. Available color palettes: https://material.io/design/color/
+            ${projectName}-primary: mat.define-palette(mat.$gray-palette);
+            ${projectName}-accent: mat.define-palette(mat.$orange-palette);
+        
+            // The warn palette is optional (defaults to red).
+            ${projectName}-warn: mat.define-palette(mat.$red-palette);
+        
+            // Extra color palettes
+            ${projectName}-pink: mat.define-palette(mat.$pink-palette);
+            ${projectName}-purple: mat.define-palette(mat.$purple-palette);
+            ${projectName}-deep-purple: mat.define-palette(mat.$deep-purple-palette);
+            ${projectName}-indigo: mat.define-palette(mat.$indigo-palette);
+            ${projectName}-blue: mat.define-palette(mat.$blue-palette);
+            ${projectName}-light-blue: mat.define-palette(mat.$light-blue-palette);
+            ${projectName}-cyan: mat.define-palette(mat.$cyan-palette);
+            ${projectName}-teal: mat.define-palette(mat.$teal-palette);
+            ${projectName}-green: mat.define-palette(mat.$green-palette);
+            ${projectName}-light-green: mat.define-palette(mat.$light-green-palette);
+            ${projectName}-lime: mat.define-palette(mat.$lime-palette);
+            ${projectName}-yellow: mat.define-palette(mat.$yellow-palette);
+            ${projectName}-amber: mat.define-palette(mat.$amber-palette);
+            ${projectName}-deep-orange: mat.define-palette(mat.$deep-orange-palette);
+            ${projectName}-brown: mat.define-palette(mat.$brown-palette);
+            ${projectName}-blue-gray: mat.define-palette(mat.$blue-gray-palette);
+        
+            // Create the theme object. A theme consists of configurations for individual
+            // theming systems such as "color" or "typography".
+            ${projectName}-theme: mat.define-dark-theme((color: (primary: ${projectName}-primary,
+                            accent: ${projectName}-accent,
+                            warn: ${projectName}-warn,
+        
+                            // Extra color palettes
+                            pink: ${projectName}-pink,
+                            purple: ${projectName}-purple,
+                            deep-purple: ${projectName}-deep-purple,
+                            blue: ${projectName}-blue,
+                            light-blue: ${projectName}-light-blue,
+                            indigo: ${projectName}-indigo,
+                            cyan: ${projectName}-cyan,
+                            teal: ${projectName}-teal,
+                            green: ${projectName}-green,
+                            light-green: ${projectName}-light-green,
+                            lime: ${projectName}-lime,
+                            yellow: ${projectName}-yellow,
+                            amber: ${projectName}-amber,
+                            deep-orange: ${projectName}-deep-orange,
+                            brown: ${projectName}-brown,
+                            blue-gray: ${projectName}-blue-gray,
+                        )));
+        
+            // Include theme styles for core and each component used in your app.
+            // Alternatively, you can import and @include the theme mixins for each component
+            // that you are using.
+            @include mat.all-component-themes(${projectName}-theme);
+        
+            $color0-primary: mat.get-color-from-palette(${projectName}-primary, 50);
+            $color1-primary: mat.get-color-from-palette(${projectName}-primary, 100);
+            $color2-primary: mat.get-color-from-palette(${projectName}-primary, 200);
+            $color3-primary: mat.get-color-from-palette(${projectName}-primary, 300);
+            $color4-primary: mat.get-color-from-palette(${projectName}-primary, 400);
+            $color5-primary: mat.get-color-from-palette(${projectName}-primary, 500);
+            $color6-primary: mat.get-color-from-palette(${projectName}-primary, 600);
+            $color7-primary: mat.get-color-from-palette(${projectName}-primary, 700);
+            $color8-primary: mat.get-color-from-palette(${projectName}-primary, 800);
+            $color9-primary: mat.get-color-from-palette(${projectName}-primary, 900);
+        
+            $color0-accent: mat.get-color-from-palette(${projectName}-accent, 50);
+            $color1-accent: mat.get-color-from-palette(${projectName}-accent, 100);
+            $color2-accent: mat.get-color-from-palette(${projectName}-accent, 200);
+            $color3-accent: mat.get-color-from-palette(${projectName}-accent, 300);
+            $color4-accent: mat.get-color-from-palette(${projectName}-accent, 400);
+            $color5-accent: mat.get-color-from-palette(${projectName}-accent, 500);
+            $color6-accent: mat.get-color-from-palette(${projectName}-accent, 600);
+            $color7-accent: mat.get-color-from-palette(${projectName}-accent, 700);
+            $color8-accent: mat.get-color-from-palette(${projectName}-accent, 800);
+            $color9-accent: mat.get-color-from-palette(${projectName}-accent, 900);
+        
+            $color0-warn: mat.get-color-from-palette(${projectName}-warn, 50);
+            $color1-warn: mat.get-color-from-palette(${projectName}-warn, 100);
+            $color2-warn: mat.get-color-from-palette(${projectName}-warn, 200);
+            $color3-warn: mat.get-color-from-palette(${projectName}-warn, 300);
+            $color4-warn: mat.get-color-from-palette(${projectName}-warn, 400);
+            $color5-warn: mat.get-color-from-palette(${projectName}-warn, 500);
+            $color6-warn: mat.get-color-from-palette(${projectName}-warn, 600);
+            $color7-warn: mat.get-color-from-palette(${projectName}-warn, 700);
+            $color8-warn: mat.get-color-from-palette(${projectName}-warn, 800);
+            $color9-warn: mat.get-color-from-palette(${projectName}-warn, 900);
+        
+            // Start
+            $color0-pink: mat.get-color-from-palette(${projectName}-pink, 50);
+            $color1-pink: mat.get-color-from-palette(${projectName}-pink, 100);
+            $color2-pink: mat.get-color-from-palette(${projectName}-pink, 200);
+            $color3-pink: mat.get-color-from-palette(${projectName}-pink, 300);
+            $color4-pink: mat.get-color-from-palette(${projectName}-pink, 400);
+            $color5-pink: mat.get-color-from-palette(${projectName}-pink, 500);
+            $color6-pink: mat.get-color-from-palette(${projectName}-pink, 600);
+            $color7-pink: mat.get-color-from-palette(${projectName}-pink, 700);
+            $color8-pink: mat.get-color-from-palette(${projectName}-pink, 800);
+            $color9-pink: mat.get-color-from-palette(${projectName}-pink, 900);
+        
+            $color0-purple: mat.get-color-from-palette(${projectName}-purple, 50);
+            $color1-purple: mat.get-color-from-palette(${projectName}-purple, 100);
+            $color2-purple: mat.get-color-from-palette(${projectName}-purple, 200);
+            $color3-purple: mat.get-color-from-palette(${projectName}-purple, 300);
+            $color4-purple: mat.get-color-from-palette(${projectName}-purple, 400);
+            $color5-purple: mat.get-color-from-palette(${projectName}-purple, 500);
+            $color6-purple: mat.get-color-from-palette(${projectName}-purple, 600);
+            $color7-purple: mat.get-color-from-palette(${projectName}-purple, 700);
+            $color8-purple: mat.get-color-from-palette(${projectName}-purple, 800);
+            $color9-purple: mat.get-color-from-palette(${projectName}-purple, 900);
+        
+            $color0-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 50);
+            $color1-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 100);
+            $color2-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 200);
+            $color3-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 300);
+            $color4-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 400);
+            $color5-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 500);
+            $color6-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 600);
+            $color7-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 700);
+            $color8-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 800);
+            $color9-deep-purple: mat.get-color-from-palette(${projectName}-deep-purple, 900);
+        
+            $color0-blue: mat.get-color-from-palette(${projectName}-blue, 50);
+            $color1-blue: mat.get-color-from-palette(${projectName}-blue, 100);
+            $color2-blue: mat.get-color-from-palette(${projectName}-blue, 200);
+            $color3-blue: mat.get-color-from-palette(${projectName}-blue, 300);
+            $color4-blue: mat.get-color-from-palette(${projectName}-blue, 400);
+            $color5-blue: mat.get-color-from-palette(${projectName}-blue, 500);
+            $color6-blue: mat.get-color-from-palette(${projectName}-blue, 600);
+            $color7-blue: mat.get-color-from-palette(${projectName}-blue, 700);
+            $color8-blue: mat.get-color-from-palette(${projectName}-blue, 800);
+            $color9-blue: mat.get-color-from-palette(${projectName}-blue, 900);
+        
+            $color0-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 50);
+            $color1-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 100);
+            $color2-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 200);
+            $color3-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 300);
+            $color4-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 400);
+            $color5-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 500);
+            $color6-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 600);
+            $color7-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 700);
+            $color8-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 800);
+            $color9-light-blue: mat.get-color-from-palette(${projectName}-light-blue, 900);
+        
+            $color0-indigo: mat.get-color-from-palette(${projectName}-indigo, 50);
+            $color1-indigo: mat.get-color-from-palette(${projectName}-indigo, 100);
+            $color2-indigo: mat.get-color-from-palette(${projectName}-indigo, 200);
+            $color3-indigo: mat.get-color-from-palette(${projectName}-indigo, 300);
+            $color4-indigo: mat.get-color-from-palette(${projectName}-indigo, 400);
+            $color5-indigo: mat.get-color-from-palette(${projectName}-indigo, 500);
+            $color6-indigo: mat.get-color-from-palette(${projectName}-indigo, 600);
+            $color7-indigo: mat.get-color-from-palette(${projectName}-indigo, 700);
+            $color8-indigo: mat.get-color-from-palette(${projectName}-indigo, 800);
+            $color9-indigo: mat.get-color-from-palette(${projectName}-indigo, 900);
+        
+            $color0-cyan: mat.get-color-from-palette(${projectName}-cyan, 50);
+            $color1-cyan: mat.get-color-from-palette(${projectName}-cyan, 100);
+            $color2-cyan: mat.get-color-from-palette(${projectName}-cyan, 200);
+            $color3-cyan: mat.get-color-from-palette(${projectName}-cyan, 300);
+            $color4-cyan: mat.get-color-from-palette(${projectName}-cyan, 400);
+            $color5-cyan: mat.get-color-from-palette(${projectName}-cyan, 500);
+            $color6-cyan: mat.get-color-from-palette(${projectName}-cyan, 600);
+            $color7-cyan: mat.get-color-from-palette(${projectName}-cyan, 700);
+            $color8-cyan: mat.get-color-from-palette(${projectName}-cyan, 800);
+            $color9-cyan: mat.get-color-from-palette(${projectName}-cyan, 900);
+        
+            $color0-teal: mat.get-color-from-palette(${projectName}-teal, 50);
+            $color1-teal: mat.get-color-from-palette(${projectName}-teal, 100);
+            $color2-teal: mat.get-color-from-palette(${projectName}-teal, 200);
+            $color3-teal: mat.get-color-from-palette(${projectName}-teal, 300);
+            $color4-teal: mat.get-color-from-palette(${projectName}-teal, 400);
+            $color5-teal: mat.get-color-from-palette(${projectName}-teal, 500);
+            $color6-teal: mat.get-color-from-palette(${projectName}-teal, 600);
+            $color7-teal: mat.get-color-from-palette(${projectName}-teal, 700);
+            $color8-teal: mat.get-color-from-palette(${projectName}-teal, 800);
+            $color9-teal: mat.get-color-from-palette(${projectName}-teal, 900);
+        
+            $color0-green: mat.get-color-from-palette(${projectName}-green, 50);
+            $color1-green: mat.get-color-from-palette(${projectName}-green, 100);
+            $color2-green: mat.get-color-from-palette(${projectName}-green, 200);
+            $color3-green: mat.get-color-from-palette(${projectName}-green, 300);
+            $color4-green: mat.get-color-from-palette(${projectName}-green, 400);
+            $color5-green: mat.get-color-from-palette(${projectName}-green, 500);
+            $color6-green: mat.get-color-from-palette(${projectName}-green, 600);
+            $color7-green: mat.get-color-from-palette(${projectName}-green, 700);
+            $color8-green: mat.get-color-from-palette(${projectName}-green, 800);
+            $color9-green: mat.get-color-from-palette(${projectName}-green, 900);
+        
+            $color0-light-green: mat.get-color-from-palette(${projectName}-light-green, 50);
+            $color1-light-green: mat.get-color-from-palette(${projectName}-light-green, 100);
+            $color2-light-green: mat.get-color-from-palette(${projectName}-light-green, 200);
+            $color3-light-green: mat.get-color-from-palette(${projectName}-light-green, 300);
+            $color4-light-green: mat.get-color-from-palette(${projectName}-light-green, 400);
+            $color5-light-green: mat.get-color-from-palette(${projectName}-light-green, 500);
+            $color6-light-green: mat.get-color-from-palette(${projectName}-light-green, 600);
+            $color7-light-green: mat.get-color-from-palette(${projectName}-light-green, 700);
+            $color8-light-green: mat.get-color-from-palette(${projectName}-light-green, 800);
+            $color9-light-green: mat.get-color-from-palette(${projectName}-light-green, 900);
+        
+            $color0-lime: mat.get-color-from-palette(${projectName}-lime, 50);
+            $color1-lime: mat.get-color-from-palette(${projectName}-lime, 100);
+            $color2-lime: mat.get-color-from-palette(${projectName}-lime, 200);
+            $color3-lime: mat.get-color-from-palette(${projectName}-lime, 300);
+            $color4-lime: mat.get-color-from-palette(${projectName}-lime, 400);
+            $color5-lime: mat.get-color-from-palette(${projectName}-lime, 500);
+            $color6-lime: mat.get-color-from-palette(${projectName}-lime, 600);
+            $color7-lime: mat.get-color-from-palette(${projectName}-lime, 700);
+            $color8-lime: mat.get-color-from-palette(${projectName}-lime, 800);
+            $color9-lime: mat.get-color-from-palette(${projectName}-lime, 900);
+        
+            $color0-yellow: mat.get-color-from-palette(${projectName}-yellow, 50);
+            $color1-yellow: mat.get-color-from-palette(${projectName}-yellow, 100);
+            $color2-yellow: mat.get-color-from-palette(${projectName}-yellow, 200);
+            $color3-yellow: mat.get-color-from-palette(${projectName}-yellow, 300);
+            $color4-yellow: mat.get-color-from-palette(${projectName}-yellow, 400);
+            $color5-yellow: mat.get-color-from-palette(${projectName}-yellow, 500);
+            $color6-yellow: mat.get-color-from-palette(${projectName}-yellow, 600);
+            $color7-yellow: mat.get-color-from-palette(${projectName}-yellow, 700);
+            $color8-yellow: mat.get-color-from-palette(${projectName}-yellow, 800);
+            $color9-yellow: mat.get-color-from-palette(${projectName}-yellow, 900);
+        
+            $color0-amber: mat.get-color-from-palette(${projectName}-amber, 50);
+            $color1-amber: mat.get-color-from-palette(${projectName}-amber, 100);
+            $color2-amber: mat.get-color-from-palette(${projectName}-amber, 200);
+            $color3-amber: mat.get-color-from-palette(${projectName}-amber, 300);
+            $color4-amber: mat.get-color-from-palette(${projectName}-amber, 400);
+            $color5-amber: mat.get-color-from-palette(${projectName}-amber, 500);
+            $color6-amber: mat.get-color-from-palette(${projectName}-amber, 600);
+            $color7-amber: mat.get-color-from-palette(${projectName}-amber, 700);
+            $color8-amber: mat.get-color-from-palette(${projectName}-amber, 800);
+            $color9-amber: mat.get-color-from-palette(${projectName}-amber, 900);
+        
+            $color0-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 50);
+            $color1-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 100);
+            $color2-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 200);
+            $color3-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 300);
+            $color4-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 400);
+            $color5-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 500);
+            $color6-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 600);
+            $color7-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 700);
+            $color8-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 800);
+            $color9-deep-orange: mat.get-color-from-palette(${projectName}-deep-orange, 900);
+        
+            $color0-brown: mat.get-color-from-palette(${projectName}-brown, 50);
+            $color1-brown: mat.get-color-from-palette(${projectName}-brown, 100);
+            $color2-brown: mat.get-color-from-palette(${projectName}-brown, 200);
+            $color3-brown: mat.get-color-from-palette(${projectName}-brown, 300);
+            $color4-brown: mat.get-color-from-palette(${projectName}-brown, 400);
+            $color5-brown: mat.get-color-from-palette(${projectName}-brown, 500);
+            $color6-brown: mat.get-color-from-palette(${projectName}-brown, 600);
+            $color7-brown: mat.get-color-from-palette(${projectName}-brown, 700);
+            $color8-brown: mat.get-color-from-palette(${projectName}-brown, 800);
+            $color9-brown: mat.get-color-from-palette(${projectName}-brown, 900);
+        
+            $color0-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 50);
+            $color1-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 100);
+            $color2-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 200);
+            $color3-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 300);
+            $color4-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 400);
+            $color5-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 500);
+            $color6-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 600);
+            $color7-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 700);
+            $color8-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 800);
+            $color9-blue-gray: mat.get-color-from-palette(${projectName}-blue-gray, 900);
+        
+            @import "./assets/styles/custom-theme";
+        }
+        
+        /* You can add global styles to this file, and also import other style files */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+        @import "./assets/styles/theme.scss";
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif !important;
         }`,
     }
 }
